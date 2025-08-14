@@ -1,111 +1,160 @@
+/* === SecureDocFreeTools Theme: Green – Gold – Black – White === */
+
+:root {
+    /* Core Brand Colors */
+    --color-dark-bg: #2E4F4C; /* Dark Slate Gray / deep green tone */
+    --color-fern-green: #4C7050; /* Mid-tone green */
+    --color-gold: #C59D4D; /* Aztec Gold accent */
+    --color-light-gold: #B17204; /* Lighter gold for hover highlights */
+    --color-white: #FFFFFF;
+    --color-gray: #A8A8A8;
+}
+
+/* Reset basic styles */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    color: var(--color-white);
 }
 
+/* Page background and typographic defaults */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #111;
-    color: #fff;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: var(--color-dark-bg);
+    line-height: 1.6;
 }
 
+/* Header styling */
 header {
-    background-color: #0a0a0a;
-    padding: 1rem 2rem;
+    background: var(--color-fern-green);
+    padding: 1.5rem 2rem;
     display: flex;
+    align-items: center;
     justify-content: space-between;
-    align-items: center;
 }
 
-header .logo h1 {
-    color: #ffd700;
-}
+    header h1 {
+        font-size: 1.8rem;
+        color: var(--color-gold);
+    }
 
-nav ul {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-}
+    header nav a {
+        color: var(--color-white);
+        text-decoration: none;
+        margin-left: 1.2rem;
+        font-weight: 500;
+        transition: color 0.3s;
+    }
 
-nav a {
-    text-decoration: none;
-    color: #fff;
-    transition: color 0.3s;
-}
+        header nav a:hover {
+            color: var(--color-light-gold);
+        }
 
-nav a:hover {
-    color: #ffd700;
-}
-
+/* Banner section */
 .banner {
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('banner.jpg') center/cover no-repeat;
-    height: 70vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    background: var(--color-fern-green);
+    padding: 3rem 1.5rem;
     text-align: center;
-    padding: 2rem;
 }
 
-.banner-content h2 {
-    font-size: 2.5rem;
+    .banner h2 {
+        font-size: 2.4rem;
+        color: var(--color-gold);
+        margin-bottom: 1rem;
+    }
+
+    .banner p {
+        font-size: 1rem;
+        color: var(--color-white);
+        margin-bottom: 1.5rem;
+    }
+
+    .banner .btn {
+        display: inline-block;
+        background: var(--color-gold);
+        color: var(--color-dark-bg);
+        padding: 0.8rem 1.8rem;
+        border-radius: 25px;
+        font-weight: bold;
+        text-decoration: none;
+        transition: background 0.3s;
+    }
+
+        .banner .btn:hover {
+            background: var(--color-light-gold);
+        }
+
+/* Tools container */
+.container {
+    max-width: 960px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Collapsible section cards */
+details {
+    background: #1c312f;
     margin-bottom: 1rem;
+    border-radius: 6px;
+    padding: 0.8rem 1rem;
 }
 
-.banner-content p {
+summary {
     font-size: 1.2rem;
-    margin-bottom: 2rem;
+    font-weight: 600;
+    cursor: pointer;
 }
 
-.btn {
-    background-color: #ffd700;
-    color: #111;
-    padding: 0.7rem 1.5rem;
-    border-radius: 5px;
-    text-decoration: none;
-    font-weight: bold;
-    transition: background 0.3s;
+    summary:hover {
+        color: var(--color-gold);
+    }
+
+/* Tool block inside details */
+.tool {
+    padding: 1rem 0;
 }
 
-.btn:hover {
-    background-color: #e6c200;
+/* Inputs, buttons, and result styling */
+input[type="file"], input[type="text"], textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 0.8rem;
+    border: 1px solid var(--color-gray);
+    border-radius: 4px;
+    background: #fff;
+    color: #000;
 }
 
-.tools {
-    padding: 3rem 2rem;
-    background-color: #1a1a1a;
+button {
+    background: var(--color-gold);
+    color: var(--color-dark-bg);
+    padding: 0.7rem 1.4rem;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-weight: 600;
 }
 
-.tools h2 {
-    text-align: center;
-    margin-bottom: 2rem;
-    color: #ffd700;
-}
+    button:hover {
+        background: var(--color-light-gold);
+    }
 
-.tool-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 2rem;
-}
-
-.tool-card {
-    background-color: #222;
-    padding: 1.5rem;
-    border-radius: 8px;
-    text-align: center;
-    border: 1px solid #333;
-    transition: transform 0.3s;
-}
-
-.tool-card:hover {
-    transform: translateY(-5px);
-}
-
-footer {
-    background-color: #0a0a0a;
-    text-align: center;
+#ocr-result {
+    background: #fff;
+    color: #000;
     padding: 1rem;
+    border-radius: 4px;
+    min-height: 120px;
+    margin-top: 0.8rem;
+    white-space: pre-wrap;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 1.2rem;
     font-size: 0.9rem;
-    color: #777;
+    color: var(--color-gray);
+    background: var(--color-fern-green);
 }
